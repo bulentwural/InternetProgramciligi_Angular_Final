@@ -1,0 +1,69 @@
+<br>
+<div>
+  <button (click)="kullaniciekle()" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon>add</mat-icon>
+  </button>
+  
+</div>
+
+<br>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="kullaniciAdSoyad">
+    <th mat-header-cell *matHeaderCellDef> Üye Adı Soyadı</th>
+    <td mat-cell *matCellDef="let kullanici"> {{kullanici.kullaniciAdSoyad}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="kullaniciTel">
+    <th mat-header-cell *matHeaderCellDef> Tel  </th>
+    <td mat-cell *matCellDef="let kullanici"> {{kullanici.kullaniciTel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="kullaniciMail">
+    <th mat-header-cell *matHeaderCellDef> Mail </th>
+    <td mat-cell *matCellDef="let kullanici"> {{kullanici.kullaniciMail}} </td>
+  </ng-container>
+  <ng-container matColumnDef="kullaniciYetki">
+    <th mat-header-cell *matHeaderCellDef> Yetki </th>
+    <td mat-cell *matCellDef="let kullanici"> {{kullanici.kullaniciYetki}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="kullaniciParola">
+    <th mat-header-cell *matHeaderCellDef> Parola </th>
+    <td mat-cell *matCellDef="let kullanici"> {{kullanici.kullaniciParola}} </td>
+  </ng-container>
+
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Duzenle">
+    <th mat-header-cell *matHeaderCellDef> Duzenle </th>
+    <td mat-cell *matCellDef="let kullanici"> <button (click)="kullaniciduzenle(kullanici)" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>edit</mat-icon>
+    </button> </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Sil">
+    <th mat-header-cell *matHeaderCellDef> Sil </th>
+    <td mat-cell *matCellDef="let kullanici"> <button (click)="kullanicisil(kullanici.kullaniciId)" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+   </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+

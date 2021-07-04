@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>{{dialogBaslik}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">  
+
+<mat-form-field appearance="fill">
+   <mat-label>Marka</mat-label>
+   <input matInput placeholder="Marka" formControlName="arabaMarka" name="arabaMarka" required type="text">
+ </mat-form-field>
+
+ <mat-form-field appearance="fill">
+  <mat-label>Model</mat-label>
+  <input matInput placeholder="Model" formControlName="arabaModel" name="arabaModel" required type="text">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Renk</mat-label>
+  <input matInput placeholder="Renk" formControlName="arabaRenk" name="arabaRenk" required type="text">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Kasa Tipi</mat-label>
+  <input matInput placeholder="Kasa Tipi" formControlName="arabaKasaTipi" name="arabaKasaTipi" required type="text">
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Yakıt</mat-label>
+  <input matInput placeholder="Yakıt" formControlName="arabaYakit" name="arabaYakit" required type="text">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+ <mat-label>Kilometre</mat-label>
+ <input matInput placeholder="Kilometre" formControlName="arabaKm" name="arabaKm" required type="text">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+ <mat-label>Görsel</mat-label>
+ <input matInput placeholder="Renk" formControlName="arabaGorsel" name="arabaGorsel" required type="text">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+ <mat-label>Fiyat</mat-label>
+ <input matInput placeholder="Fiyat" formControlName="arabaFiyat" name="arabaFiyat" required type="number">
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Araba Kategori Id</mat-label>
+  <input matInput placeholder="Araba Kategori Id" formControlName="arabaKategoriId" name="arabaKategoriId" required type="number">
+ </mat-form-field>
+
+ <mat-form-field appearance="fill">
+  <mat-label>Araba Kodu</mat-label>
+  <input matInput placeholder="Araba Kodu" formControlName="arabaKodu" name="arabaKodu" required type="text">
+ </mat-form-field>
+
+
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button color="primary" mat-button mat-dialog-close (click)="dialogRef.close(form.value)">Ekle</button> &nbsp;
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button color="warn"mat-button (click)="dialogRef.close()">Vazgeç</button>
+</mat-dialog-actions>
+
+

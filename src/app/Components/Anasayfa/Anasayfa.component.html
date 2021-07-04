@@ -1,0 +1,21 @@
+<br><br>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let araba of arabalar">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{araba.arabaMarka}} </mat-card-title>
+          <mat-card-subtitle>{{araba.arabaModel}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{araba.arabaGorsel}}" alt="Photo of a Shiba Inu">
+        
+        <mat-card-actions>
+          <button mat-button>{{araba.arabaKm}} km </button>
+          <button mat-button>{{araba.arabaFiyat}} ₺ </button>
+          <button mat-button>{{araba.arabaYakit}} </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    </div>
+
+

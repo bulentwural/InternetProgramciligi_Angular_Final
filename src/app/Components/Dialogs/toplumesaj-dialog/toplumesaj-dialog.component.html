@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{dialogBaslik}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">  
+
+
+      
+    <mat-form-field appearance="fill">
+     <mat-label>Konu</mat-label>
+     <input matInput placeholder="Konu" formControlName="MesajKonu" name="MesajKonu" required type="text">
+   </mat-form-field>
+    <mat-form-field appearance="fill">
+     <mat-label>İçerik</mat-label>
+     <textarea rows="4" matInput placeholder="İçerik" formControlName="MesajIcerik" name="MesajIcerik" required type="text"></textarea>
+   </mat-form-field>
+   </form>
+   </mat-dialog-content>
+   
+   <mat-dialog-actions>
+     <button color="primary" mat-button mat-dialog-close (click)="dialogRef.close(form.value)">Gönder</button> &nbsp;
+     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+     <button color="warn"mat-button (click)="dialogRef.close()">Vazgeç</button>
+   </mat-dialog-actions>
+   
+

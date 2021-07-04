@@ -1,0 +1,94 @@
+<br>
+<div>
+  <button (click)="arabaekle()" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon>add</mat-icon>
+  </button>
+  
+</div>
+
+<br>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="arabaMarka">
+    <th mat-header-cell *matHeaderCellDef> Marka </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaMarka}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaModel">
+    <th mat-header-cell *matHeaderCellDef> Model </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaModel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaRenk">
+    <th mat-header-cell *matHeaderCellDef> Renk </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaRenk}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaKasaTipi">
+    <th mat-header-cell *matHeaderCellDef> Kasa Tipi </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaKasaTipi}} </td>
+  </ng-container>
+ 
+
+  <ng-container matColumnDef="arabaYakit">
+    <th mat-header-cell *matHeaderCellDef> Yakıt </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaYakit}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaKm">
+    <th mat-header-cell *matHeaderCellDef> Kilometre </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaKm}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaGorsel">
+    <th mat-header-cell *matHeaderCellDef> Araba Görsel </th>
+    <td mat-cell *matCellDef="let araba"> <img src="{{araba.arabaGorsel}}" alt="" width="50px"></td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaFiyat">
+    <th mat-header-cell *matHeaderCellDef> Fiyat </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaFiyat}} ₺ </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaKategoriId">
+    <th mat-header-cell *matHeaderCellDef> Araba Kategori Id </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaKategoriId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arabaKodu">
+    <th mat-header-cell *matHeaderCellDef> Kodu </th>
+    <td mat-cell *matCellDef="let araba"> {{araba.arabaKodu}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Duzenle">
+    <th mat-header-cell *matHeaderCellDef> Duzenle </th>
+    <td mat-cell *matCellDef="let araba"> <button (click)="arabaduzenle(araba)" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>edit</mat-icon>
+    </button> </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Sil">
+    <th mat-header-cell *matHeaderCellDef> Sil </th>
+    <td mat-cell *matCellDef="let araba"> <button (click)="arabasil(araba.arabaId)" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+   </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+

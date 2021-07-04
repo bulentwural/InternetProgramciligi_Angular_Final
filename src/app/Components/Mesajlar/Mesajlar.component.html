@@ -1,0 +1,52 @@
+<br>
+<div class="row" *ngIf="admin==true">
+  <div class="col-md-2">
+    <button (click)="mesajekle()" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>add</mat-icon>
+    </button> <strong> Yeni Mesaj</strong>
+  </div>
+  <div class="col-md-2">
+    <button (click)="toplumesajekle()" mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>add</mat-icon>
+    </button> <strong> Toplu Mesaj</strong>
+  </div>
+</div>
+
+
+<br>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="mesajId">
+    <th mat-header-cell *matHeaderCellDef> Mesaj Id </th>
+    <td mat-cell *matCellDef="let mesaj"> {{mesaj.MesajId}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mesajAlan">
+    <th mat-header-cell *matHeaderCellDef> Alan Ad Soyad </th>
+    <td mat-cell *matCellDef="let mesaj"> {{mesaj.MesajAlanAd}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mesajGonderen">
+    <th mat-header-cell *matHeaderCellDef> Gönderen Ad Soyad </th>
+    <td mat-cell *matCellDef="let mesaj"> {{mesaj.MesajGonderenAd}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mesajIcerik">
+    <th mat-header-cell *matHeaderCellDef> Mesaj İçerik </th>
+    <td mat-cell *matCellDef="let mesaj"> {{mesaj.MesajIcerik}}</td>
+  </ng-container>
+  <ng-container matColumnDef="mesajTarihi">
+    <th mat-header-cell *matHeaderCellDef> Mesaj Tarihi </th>
+    <td mat-cell *matCellDef="let mesaj"> {{mesaj.MesajTarihi | date:"dd/MM/yyyy HH:mm"}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
